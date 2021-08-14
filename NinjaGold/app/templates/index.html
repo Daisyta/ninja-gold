@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% load static %}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Ninja Gold</title>
+</head>
+
+<body>
+
+    <div class="card-group">
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Farm</h5>
+                <div class="col-md-4">
+                    <form method="POST" action="/process_money/">
+                        {% csrf_token %}
+                        <input type="hidden" name="option" value="farm">
+                        <button id="Submit" type="submit" class="btn btn-primary">Find Gold</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Cave</h5>
+                <div class="col-md-4">
+                    <form method="POST" action="/process_money/">
+                        {% csrf_token %}
+                        <input type="hidden" name="option" value="cave">
+                        <button id="Submit" type="submit" class="btn btn-primary">Find Gold</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">House</h5>
+                <div class="col-md-4">
+                    <form method="POST" action="/process_money/">
+                        {% csrf_token %}
+                        <input type="hidden" name="option" value="house">
+                        <button id="Submit" type="submit" class="btn btn-primary">Find Gold</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Casino</h5>
+                <div class="col-md-4">
+                    <form method="POST" action="/process_money/">
+                        {% csrf_token %}
+                        <input type="hidden" name="option" value="casino">
+                        <button id="Submit" type="submit" class="btn btn-primary">Find Gold</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row mt=5">
+            <h3>Monedas obtenidas:{{request.session.contador}}</h3>
+        </div>
+        <div class="row mt=5">
+            <a href="/reset/" class="btn btn-primary">Reset</a>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+
+</html>
